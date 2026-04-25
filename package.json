@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "ng serve --host 0.0.0.0 --port $PORT --serve-path $BASE_PATH",
-    "build": "npx ng build --base-href $BASE_PATH",
-    "serve": "ng serve --host 0.0.0.0 --port $PORT --serve-path $BASE_PATH",
+    "dev": "ng serve",
+    "build": "ng build --base-href /",
+    "serve": "ng serve",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
