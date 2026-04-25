@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "ng serve",
-    "build": "ng build --base-href /",
+    "build": "ng build",
     "serve": "ng serve",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
