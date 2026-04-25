@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path=dist",
     "serve": "ng serve",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
