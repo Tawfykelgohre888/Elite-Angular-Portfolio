@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "ng serve --host 0.0.0.0 --port $PORT --serve-path $BASE_PATH",
-    "build": "ng build --base-href $BASE_PATH",
+    "build": "npx ng build --base-href $BASE_PATH",
     "serve": "ng serve --host 0.0.0.0 --port $PORT --serve-path $BASE_PATH",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
