@@ -4,16 +4,16 @@ import {
   computed,
   inject,
   signal,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PortfolioService } from '../../core/services/portfolio.service';
-import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll.directive';
-import { Skill } from '../../core/models/portfolio.models';
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { PortfolioService } from "../../core/services/portfolio.service";
+import { RevealOnScrollDirective } from "../../shared/directives/reveal-on-scroll.directive";
+import { Skill } from "../../core/models/portfolio.models";
 
-type CategoryKey = 'all' | Skill['category'];
+type CategoryKey = "all" | Skill["category"];
 
 @Component({
-  selector: 'app-skills-section',
+  selector: "app-skills-section",
   standalone: true,
   imports: [CommonModule, RevealOnScrollDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,25 +28,25 @@ type CategoryKey = 'all' | Skill['category'];
       <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
         <!-- Heading -->
         <div appRevealOnScroll class="max-w-2xl">
-          <p class="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+          <p
+            class="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-accent"
+          >
             02 — Skills Cloud
           </p>
-          <h2 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2
+            class="text-balance text-4xl font-bold tracking-tight sm:text-5xl"
+          >
             An interactive arsenal of
             <span class="text-gradient">modern web tooling.</span>
           </h2>
           <p class="mt-4 text-fg-muted">
-            Hover the orbits, filter the categories — every skill below is something I
-            actively use shipping production interfaces.
+            Hover the orbits, filter the categories — every skill below is
+            something I actively use shipping production interfaces.
           </p>
         </div>
 
         <!-- Filter pills -->
-        <div
-          appRevealOnScroll
-          [delay]="120"
-          class="mt-10 flex flex-wrap gap-2"
-        >
+        <div appRevealOnScroll [delay]="120" class="mt-10 flex flex-wrap gap-2">
           @for (cat of categories; track cat.key) {
             <button
               type="button"
@@ -67,7 +67,7 @@ type CategoryKey = 'all' | Skill['category'];
             >
               {{ cat.label }}
               <span class="ml-1 text-xs opacity-70">
-                {{ cat.key === 'all' ? skills().length : countFor(cat.key) }}
+                {{ cat.key === "all" ? skills().length : countFor(cat.key) }}
               </span>
             </button>
           }
@@ -91,8 +91,12 @@ type CategoryKey = 'all' | Skill['category'];
               <div class="relative">
                 <div class="flex items-start justify-between gap-3">
                   <div>
-                    <h3 class="text-base font-semibold text-fg">{{ skill.name }}</h3>
-                    <p class="mt-1 text-[11px] uppercase tracking-widest text-fg-soft">
+                    <h3 class="text-base font-semibold text-fg">
+                      {{ skill.name }}
+                    </h3>
+                    <p
+                      class="mt-1 text-[11px] uppercase tracking-widest text-fg-soft"
+                    >
                       {{ skill.category }}
                     </p>
                   </div>
@@ -132,9 +136,13 @@ type CategoryKey = 'all' | Skill['category'];
             style="background: linear-gradient(to left, var(--color-bg), transparent);"
           ></div>
 
-          <div class="flex animate-marquee gap-12 whitespace-nowrap will-change-transform">
+          <div
+            class="flex animate-marquee gap-12 whitespace-nowrap will-change-transform"
+          >
             @for (tech of marqueeItems; track $index) {
-              <span class="flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-fg-muted">
+              <span
+                class="flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-fg-muted"
+              >
                 <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
                 {{ tech }}
               </span>
@@ -149,50 +157,55 @@ export class SkillsSection {
   private readonly portfolio = inject(PortfolioService);
   protected readonly skills = this.portfolio.skills;
 
-  protected readonly active = signal<CategoryKey>('all');
+  protected readonly active = signal<CategoryKey>("all");
 
-  protected readonly categories: readonly { key: CategoryKey; label: string }[] = [
-    { key: 'all', label: 'All' },
-    { key: 'frontend', label: 'Frontend' },
-    { key: 'state', label: 'State & Forms' },
-    { key: 'styling', label: 'Styling' },
-    { key: 'tools', label: 'Tools & APIs' },
-    { key: 'practice', label: 'Practices' },
+  protected readonly categories: readonly {
+    key: CategoryKey;
+    label: string;
+  }[] = [
+    { key: "all", label: "All" },
+    { key: "frontend", label: "Frontend" },
+    { key: "state", label: "State & Forms" },
+    { key: "styling", label: "Styling" },
+    { key: "tools", label: "Tools & APIs" },
+    { key: "practice", label: "Practices" },
   ];
 
   protected readonly marqueeItems = [
-    'Angular',
-    'TypeScript',
-    'Signals',
-    'RxJS',
-    'NgRx',
-    'Tailwind',
-    'PrimeNG',
-    'Angular Material',
-    'Nx',
-    'Jest',
-    'Azure DevOps',
-    'GraphQL',
-    'REST',
+    "Angular",
+    "TypeScript",
+    "Signals",
+    "RxJS",
+    "NgRx",
+    "Tailwind",
+    "PrimeNG",
+    "Angular Material",
+    "Nx",
+    "Jest",
+    "Azure DevOps",
+    "Jira",
+    "GraphQL",
+    "REST",
     // duplicate for seamless loop
-    'Angular',
-    'TypeScript',
-    'Signals',
-    'RxJS',
-    'NgRx',
-    'Tailwind',
-    'PrimeNG',
-    'Angular Material',
-    'Nx',
-    'Jest',
-    'Azure DevOps',
-    'GraphQL',
-    'REST',
+    "Angular",
+    "TypeScript",
+    "Signals",
+    "RxJS",
+    "NgRx",
+    "Tailwind",
+    "PrimeNG",
+    "Angular Material",
+    "Nx",
+    "Jest",
+    "Azure DevOps",
+    "Jira",
+    "GraphQL",
+    "REST",
   ];
 
   protected readonly filteredSkills = computed<readonly Skill[]>(() => {
     const active = this.active();
-    if (active === 'all') return this.skills();
+    if (active === "all") return this.skills();
     return this.skills().filter((s) => s.category === active);
   });
 
@@ -200,40 +213,40 @@ export class SkillsSection {
     this.active.set(key);
   }
 
-  protected countFor(key: Skill['category']): number {
+  protected countFor(key: Skill["category"]): number {
     return this.skills().filter((s) => s.category === key).length;
   }
 
   protected glowFor(accent: string): string {
     switch (accent) {
-      case 'cyan':
-        return 'radial-gradient(circle, rgba(56,189,248,0.55), transparent)';
-      case 'pink':
-        return 'radial-gradient(circle, rgba(240,171,252,0.55), transparent)';
+      case "cyan":
+        return "radial-gradient(circle, rgba(56,189,248,0.55), transparent)";
+      case "pink":
+        return "radial-gradient(circle, rgba(240,171,252,0.55), transparent)";
       default:
-        return 'radial-gradient(circle, rgba(167,139,250,0.55), transparent)';
+        return "radial-gradient(circle, rgba(167,139,250,0.55), transparent)";
     }
   }
 
   protected barFor(accent: string): string {
     switch (accent) {
-      case 'cyan':
-        return 'linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc)';
-      case 'pink':
-        return 'linear-gradient(90deg, #d946ef, #f0abfc, #fbcfe8)';
+      case "cyan":
+        return "linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc)";
+      case "pink":
+        return "linear-gradient(90deg, #d946ef, #f0abfc, #fbcfe8)";
       default:
-        return 'linear-gradient(90deg, #7c3aed, #a78bfa, #c4b5fd)';
+        return "linear-gradient(90deg, #7c3aed, #a78bfa, #c4b5fd)";
     }
   }
 
   protected textFor(accent: string): string {
     switch (accent) {
-      case 'cyan':
-        return '#7dd3fc';
-      case 'pink':
-        return '#f0abfc';
+      case "cyan":
+        return "#7dd3fc";
+      case "pink":
+        return "#f0abfc";
       default:
-        return '#c4b5fd';
+        return "#c4b5fd";
     }
   }
 }

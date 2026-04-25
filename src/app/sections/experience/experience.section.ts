@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PortfolioService } from '../../core/services/portfolio.service';
-import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll.directive';
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { PortfolioService } from "../../core/services/portfolio.service";
+import { RevealOnScrollDirective } from "../../shared/directives/reveal-on-scroll.directive";
 
 @Component({
-  selector: 'app-experience-section',
+  selector: "app-experience-section",
   standalone: true,
   imports: [CommonModule, RevealOnScrollDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,10 +12,14 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
     <section id="experience" class="relative py-28 sm:py-36">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div appRevealOnScroll class="max-w-2xl">
-          <p class="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+          <p
+            class="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-accent"
+          >
             03 — Journey
           </p>
-          <h2 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2
+            class="text-balance text-4xl font-bold tracking-tight sm:text-5xl"
+          >
             A timeline of
             <span class="text-gradient">growth, ships, and lessons.</span>
           </h2>
@@ -29,8 +33,22 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
           <!-- Experience -->
           <div>
             <div appRevealOnScroll class="mb-6 flex items-center gap-3">
-              <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-deep to-accent-2 text-white shadow-glow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span
+                class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-deep to-accent-2 text-white shadow-glow"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
               </span>
               <h3 class="text-xl font-semibold">Experience</h3>
             </div>
@@ -44,15 +62,21 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
                   <span
                     class="absolute -left-[34px] top-1.5 grid h-5 w-5 place-items-center rounded-full bg-bg ring-2 ring-accent transition-all duration-300 group-hover:ring-accent-2"
                   >
-                    <span class="h-2 w-2 rounded-full bg-accent transition-all duration-300 group-hover:bg-accent-2 group-hover:scale-125"></span>
+                    <span
+                      class="h-2 w-2 rounded-full bg-accent transition-all duration-300 group-hover:bg-accent-2 group-hover:scale-125"
+                    ></span>
                   </span>
                   <div
                     class="glass rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-cinematic"
                   >
-                    <p class="font-mono text-xs uppercase tracking-widest text-accent-bright">
+                    <p
+                      class="font-mono text-xs uppercase tracking-widest text-accent-bright"
+                    >
                       {{ item.period }}
                     </p>
-                    <h4 class="mt-2 text-lg font-semibold text-fg">{{ item.role }}</h4>
+                    <h4 class="mt-2 text-lg font-semibold text-fg">
+                      {{ item.role }}
+                    </h4>
                     <p class="text-sm text-fg-muted">
                       {{ item.company }}
                       <span class="text-fg-soft">· {{ item.location }}</span>
@@ -60,7 +84,9 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
                     <ul class="mt-4 space-y-2 text-sm text-fg-muted">
                       @for (h of item.highlights; track h) {
                         <li class="flex gap-2">
-                          <span class="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent"></span>
+                          <span
+                            class="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent"
+                          ></span>
                           <span>{{ h }}</span>
                         </li>
                       }
@@ -79,8 +105,22 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
           <!-- Education + Courses -->
           <div>
             <div appRevealOnScroll class="mb-6 flex items-center gap-3">
-              <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-pink-500 to-accent text-white shadow-glow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 10-10-5L2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span
+                class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-pink-500 to-accent text-white shadow-glow"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m22 10-10-5L2 10l10 5 10-5Z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
               </span>
               <h3 class="text-xl font-semibold">Education & Courses</h3>
             </div>
@@ -106,7 +146,9 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
                     class="glass rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-cinematic"
                   >
                     <div class="flex items-center justify-between gap-3">
-                      <p class="font-mono text-xs uppercase tracking-widest text-accent-bright">
+                      <p
+                        class="font-mono text-xs uppercase tracking-widest text-accent-bright"
+                      >
                         {{ item.period }}
                       </p>
                       <span
@@ -115,12 +157,14 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
                         [class.bg-opacity-15]="true"
                         [class.text-pink-300]="item.type === 'education'"
                         [class.bg-cyan-500]="item.type === 'course'"
-                        [class.text-cyan-300]="item.type === 'course'"
+                        [class.bg-cyan-800]="item.type === 'training'"
                       >
                         {{ item.type }}
                       </span>
                     </div>
-                    <h4 class="mt-2 text-lg font-semibold text-fg">{{ item.role }}</h4>
+                    <h4 class="mt-2 text-lg font-semibold text-fg">
+                      {{ item.role }}
+                    </h4>
                     <p class="text-sm text-fg-muted">
                       {{ item.company }}
                       <span class="text-fg-soft">· {{ item.location }}</span>
@@ -128,7 +172,9 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
                     <ul class="mt-4 space-y-2 text-sm text-fg-muted">
                       @for (h of item.highlights; track h) {
                         <li class="flex gap-2">
-                          <span class="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent"></span>
+                          <span
+                            class="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent"
+                          ></span>
                           <span>{{ h }}</span>
                         </li>
                       }

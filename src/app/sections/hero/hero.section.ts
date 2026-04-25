@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PortfolioService } from '../../core/services/portfolio.service';
-import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll.directive';
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { PortfolioService } from "../../core/services/portfolio.service";
+import { RevealOnScrollDirective } from "../../shared/directives/reveal-on-scroll.directive";
 
 @Component({
-  selector: 'app-hero-section',
+  selector: "app-hero-section",
   standalone: true,
   imports: [CommonModule, RevealOnScrollDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -36,8 +36,12 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
           <div class="lg:col-span-7">
             <div appRevealOnScroll class="mb-6 flex items-center gap-3">
               <span class="relative flex h-2.5 w-2.5">
-                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"
+                ></span>
               </span>
               <span class="text-xs uppercase tracking-[0.3em] text-fg-muted">
                 Available for new opportunities
@@ -49,8 +53,12 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
               [delay]="80"
               class="text-balance text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl"
             >
-              <span class="block text-fg">{{ profile().name.split(' ')[0] }}</span>
-              <span class="block text-gradient">{{ profile().name.split(' ').slice(1).join(' ') }}</span>
+              <span class="block text-fg">{{
+                profile().name.split(" ")[0]
+              }}</span>
+              <span class="block text-gradient">{{
+                profile().name.split(" ").slice(1).join(" ")
+              }}</span>
             </h1>
 
             <p
@@ -69,12 +77,44 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
               [delay]="240"
               class="mt-10 flex flex-wrap items-center gap-3"
             >
-              <button type="button" class="btn-primary" (click)="scrollTo('projects')">
+              <button
+                type="button"
+                class="btn-primary"
+                (click)="scrollTo('projects')"
+              >
                 <span>See My Work</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
               </button>
-              <button type="button" class="btn-ghost" (click)="scrollTo('contact')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              <button
+                type="button"
+                class="btn-ghost"
+                (click)="scrollTo('contact')"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
+                </svg>
                 <span>Get in Touch</span>
               </button>
             </div>
@@ -86,19 +126,25 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
               class="mt-14 grid max-w-lg grid-cols-3 gap-4"
             >
               <div class="glass rounded-2xl p-4">
-                <dt class="text-xs uppercase tracking-wider text-fg-soft">Projects</dt>
+                <dt class="text-xs uppercase tracking-wider text-fg-soft">
+                  Projects
+                </dt>
                 <dd class="mt-1 text-2xl font-bold text-gradient-accent">
                   {{ stats().projects }}+
                 </dd>
               </div>
               <div class="glass rounded-2xl p-4">
-                <dt class="text-xs uppercase tracking-wider text-fg-soft">Skills</dt>
+                <dt class="text-xs uppercase tracking-wider text-fg-soft">
+                  Skills
+                </dt>
                 <dd class="mt-1 text-2xl font-bold text-gradient-accent">
                   {{ stats().skills }}
                 </dd>
               </div>
               <div class="glass rounded-2xl p-4">
-                <dt class="text-xs uppercase tracking-wider text-fg-soft">Years</dt>
+                <dt class="text-xs uppercase tracking-wider text-fg-soft">
+                  Years
+                </dt>
                 <dd class="mt-1 text-2xl font-bold text-gradient-accent">
                   {{ stats().yearsExperience }}+
                 </dd>
@@ -108,34 +154,49 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
 
           <!-- Right: Cinematic Code Card -->
           <div class="lg:col-span-5">
-            <div
-              appRevealOnScroll
-              [delay]="200"
-              class="relative animate-float"
-            >
+            <div appRevealOnScroll [delay]="200" class="relative animate-float">
               <!-- Orbital ring -->
-              <div class="pointer-events-none absolute -inset-8 hidden sm:block">
+              <div
+                class="pointer-events-none absolute -inset-8 hidden sm:block"
+              >
                 <div class="absolute inset-0 animate-orbit-slow">
-                  <div class="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_20px_rgba(167,139,250,0.8)]"></div>
+                  <div
+                    class="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_20px_rgba(167,139,250,0.8)]"
+                  ></div>
                 </div>
-                <div class="absolute inset-4 animate-orbit-slow" style="animation-direction: reverse; animation-duration: 22s;">
-                  <div class="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-accent-2 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+                <div
+                  class="absolute inset-4 animate-orbit-slow"
+                  style="animation-direction: reverse; animation-duration: 22s;"
+                >
+                  <div
+                    class="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-accent-2 shadow-[0_0_15px_rgba(56,189,248,0.8)]"
+                  ></div>
                 </div>
               </div>
 
-              <div class="glass-strong relative overflow-hidden rounded-3xl shadow-cinematic">
+              <div
+                class="glass-strong relative overflow-hidden rounded-3xl shadow-cinematic"
+              >
                 <!-- Window chrome -->
-                <div class="flex items-center gap-2 border-b border-white/5 px-5 py-3">
+                <div
+                  class="flex items-center gap-2 border-b border-white/5 px-5 py-3"
+                >
                   <span class="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
-                  <span class="h-2.5 w-2.5 rounded-full bg-yellow-400/70"></span>
+                  <span
+                    class="h-2.5 w-2.5 rounded-full bg-yellow-400/70"
+                  ></span>
                   <span class="h-2.5 w-2.5 rounded-full bg-green-400/70"></span>
-                  <span class="ml-3 font-mono text-xs text-fg-soft">developer.signal.ts</span>
+                  <span class="ml-3 font-mono text-xs text-fg-soft"
+                    >developer.signal.ts</span
+                  >
                 </div>
 
                 <!-- Code -->
-                <pre class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-fg-muted"><code><span class="text-accent">const</span> <span class="text-accent-bright">developer</span> = <span class="text-accent">signal</span>(&#123;
+                <pre
+                  class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-fg-muted"
+                ><code><span class="text-accent">const</span> <span class="text-accent-bright">developer</span> = <span class="text-accent">signal</span>(&#123;
   <span class="text-fg">name</span>: <span class="text-emerald-300">'Tawfik Elgohare'</span>,
-  <span class="text-fg">role</span>: <span class="text-emerald-300">'Junior Frontend Dev'</span>,
+  <span class="text-fg">role</span>: <span class="text-emerald-300">' Frontend Dev'</span>,
   <span class="text-fg">stack</span>: [
     <span class="text-emerald-300">'Angular'</span>,
     <span class="text-emerald-300">'TypeScript'</span>,
@@ -153,12 +214,20 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
 <span class="text-fg-soft">// → ready.shipping = true</span></code></pre>
 
                 <!-- Footer pill -->
-                <div class="flex items-center justify-between border-t border-white/5 px-5 py-3">
-                  <span class="font-mono text-[11px] uppercase tracking-widest text-fg-soft">
+                <div
+                  class="flex items-center justify-between border-t border-white/5 px-5 py-3"
+                >
+                  <span
+                    class="font-mono text-[11px] uppercase tracking-widest text-fg-soft"
+                  >
                     Angular 21 · Standalone · Signals
                   </span>
-                  <span class="flex items-center gap-1.5 font-mono text-[11px] text-emerald-300">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span
+                    class="flex items-center gap-1.5 font-mono text-[11px] text-emerald-300"
+                  >
+                    <span
+                      class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"
+                    ></span>
                     LIVE
                   </span>
                 </div>
@@ -177,8 +246,12 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
           aria-label="Scroll to next section"
         >
           <span class="text-[10px] uppercase tracking-[0.4em]">Scroll</span>
-          <span class="relative flex h-9 w-5 items-start justify-center rounded-full border border-white/15 pt-1.5">
-            <span class="h-1.5 w-1 rounded-full bg-fg-muted animate-bounce"></span>
+          <span
+            class="relative flex h-9 w-5 items-start justify-center rounded-full border border-white/15 pt-1.5"
+          >
+            <span
+              class="h-1.5 w-1 rounded-full bg-fg-muted animate-bounce"
+            ></span>
           </span>
         </button>
       </div>
@@ -191,6 +264,6 @@ export class HeroSection {
   protected readonly stats = this.portfolio.stats;
 
   protected scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
 }

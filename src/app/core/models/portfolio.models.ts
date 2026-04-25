@@ -1,6 +1,6 @@
 export interface Skill {
   readonly name: string;
-  readonly category: 'frontend' | 'state' | 'styling' | 'tools' | 'practice';
+  readonly category: "frontend" | "state" | "styling" | "tools" | "practice";
   readonly level: number; // 0-100
   readonly accent: string; // tailwind class hint
 }
@@ -11,7 +11,7 @@ export interface ExperienceItem {
   readonly company: string;
   readonly period: string;
   readonly location: string;
-  readonly type: 'experience' | 'education' | 'course';
+  readonly type: "experience" | "education" | "course" | "training";
   readonly highlights: readonly string[];
   readonly tags: readonly string[];
 }
@@ -24,7 +24,7 @@ export interface Project {
   readonly description: string;
   readonly tech: readonly string[];
   readonly highlights: readonly string[];
-  readonly accent: 'violet' | 'cyan' | 'pink';
+  readonly accent: "violet" | "cyan" | "pink";
 }
 
 export interface Profile {
