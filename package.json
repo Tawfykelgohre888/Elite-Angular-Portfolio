@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "ng serve --host 0.0.0.0 --port $PORT --serve-path $BASE_PATH",
-    "build": "ng build --base-href $BASE_PATH",
-    "serve": "ng serve --host 0.0.0.0 --port $PORT --serve-path $BASE_PATH",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "dependencies": {
     "@angular/animations": "^21.0.0",
